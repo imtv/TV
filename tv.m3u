@@ -1,15 +1,15 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml"
 #EXTINF:-1 tvg-id="31" tvg-logo="http://10.10.10.9/assets/tvg-logo/东方卫视.png" group-title="上海",东方卫视
 http://10.1.1.1:3000/rtp/238.200.200.125:5540
-#EXTINF:-1 tvg-id="1984" tvg-logo="http://10.10.10.9/assets/tvg-logo/shwx.png" group-title="上海",新闻综合
+#EXTINF:-1 tvg-id="9999" tvg-logo="http://10.10.10.9/assets/tvg-logo/shwx.png" group-title="上海",新闻综合
 http://10.1.1.1:3000/rtp/238.200.200.130:5540
-#EXTINF:-1 tvg-id="1989" tvg-logo="http://10.10.10.9/assets/tvg-logo/shds.png" group-title="上海",都市频道
+#EXTINF:-1 tvg-id="9999" tvg-logo="http://10.10.10.9/assets/tvg-logo/shds.png" group-title="上海",都市频道
 http://10.1.1.1:3000/rtp/238.200.200.127:5540
-#EXTINF:-1 tvg-id="1896" tvg-logo="http://10.10.10.9/assets/tvg-logo/dfys.png" group-title="上海",东方影视
+#EXTINF:-1 tvg-id="9999" tvg-logo="http://10.10.10.9/assets/tvg-logo/dfys.png" group-title="上海",东方影视
 http://10.1.1.1:3000/rtp/238.200.200.128:5540
-#EXTINF:-1 tvg-id="1985" tvg-logo="http://10.10.10.9/assets/tvg-logo/dycj.png" group-title="上海",第一财经
+#EXTINF:-1 tvg-id="9999" tvg-logo="http://10.10.10.9/assets/tvg-logo/dycj.png" group-title="上海",第一财经
 http://10.1.1.1:3000/rtp/238.200.200.132:5540
-#EXTINF:-1 tvg-id="1987" tvg-logo="http://10.10.10.9/assets/tvg-logo/wxty.png" group-title="上海",五星体育
+#EXTINF:-1 tvg-id="9999" tvg-logo="http://10.10.10.9/assets/tvg-logo/wxty.png" group-title="上海",五星体育
 http://10.1.1.1:3000/rtp/238.200.200.131:5540
 #EXTINF:-1 tvg-id="62" tvg-logo="http://10.10.10.9/assets/tvg-logo/hhxd.png" group-title="上海",哈哈炫动
 http://10.1.1.1:3000/rtp/238.200.200.176:5540
@@ -44,10 +44,10 @@ http://10.1.1.1:3000/rtp/238.200.200.241:5540
 #EXTINF:-1 tvg-id="16" tvg-logo="http://10.10.10.9/assets/tvg-logo/cctv15.png" group-title="央视",CCTV15
 http://10.1.1.1:3000/rtp/238.200.200.59:5540
 #EXTINF:-1 tvg-id="7249" tvg-logo="http://10.10.10.9/assets/tvg-logo/cctv16.png" group-title="央视",CCTV16
-http://10.1.1.1:3000/rtp/238.200.200.180:5540
+http://10.1.1.1:3000/rtp/238.200.200.1:5540
 #EXTINF:-1 tvg-id="17" tvg-logo="http://10.10.10.9/assets/tvg-logo/cctv17.png" group-title="央视",CCTV17
 http://10.1.1.1:3000/rtp/238.200.200.242:5540
-#EXTINF:-1 tvg-logo="http://10.10.10.9/assets/tvg-logo/cctv4k.png" group-title="4K",CCTV超高清
+#EXTINF:-1 tvg-id="106" tvg-logo="http://10.10.10.9/assets/tvg-logo/cctv4k.png" group-title="央视",CCTV4K
 http://10.1.1.1:3000/rtp/238.200.200.91:5540
 #EXTINF:-1 tvg-id="27" tvg-logo="http://10.10.10.9/assets/tvg-logo/湖南卫视.png" group-title="卫视",湖南卫视
 http://10.1.1.1:3000/rtp/238.200.200.136:5540
@@ -57,5 +57,3 @@ http://10.1.1.1:3000/rtp/238.200.200.134:5540
 http://10.1.1.1:3000/rtp/238.200.200.135:5540
 #EXTINF:-1 tvg-id="30" tvg-logo="http://10.10.10.9/assets/tvg-logo/beijing1.png" group-title="卫视",北京卫视
 http://10.1.1.1:3000/rtp/238.200.200.137:5540
-#EXTINF:-1 group-title="4K",欢笑剧场
-http://10.1.1.1:3000/rtp/238.200.200.228:5540
