@@ -1,6 +1,7 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml"
 #EXTINF:-1 tvg-id="31" tvg-logo="http://10.10.10.9/assets/tvg-logo/东方卫视.png" group-title="上海",东方卫视
-http://10.1.1.2:7088/rtp/238.200.200.125:5540
+http://10.1.1.2:7088/rtp/238.200.200.125:5540$LR•IPV6『线路1』
+http://10.10.10.2:7088/rtp/225.0.0.2:6140$LR•IPV6『线路2』
 #EXTINF:-1 tvg-id="9999" tvg-logo="http://10.10.10.9/assets/tvg-logo/shwx.png" group-title="上海",新闻综合
 http://10.1.1.2:7088/rtp/238.200.200.130:5540
 #EXTINF:-1 tvg-id="9999" tvg-logo="http://10.10.10.9/assets/tvg-logo/shds.png" group-title="上海",都市频道
