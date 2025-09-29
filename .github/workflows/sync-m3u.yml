@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'data/shyd-saomiao.txt'
+      - 'data/blacklist.txt'
   workflow_dispatch:
 
 jobs:
@@ -26,6 +27,20 @@ jobs:
         python3 << 'EOF'
         import re
         from collections import OrderedDict
+        import os
+        
+        # 读取黑名单文件（如果存在）
+        blacklist_urls = set()
+        blacklist_file = 'data/blacklist.txt'
+        if os.path.exists(blacklist_file):
+            with open(blacklist_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#'):
+                        blacklist_urls.add(line)
+            print(f"已加载黑名单链接数量: {len(blacklist_urls)}")
+        else:
+            print("黑名单文件不存在，跳过黑名单过滤")
         
         # 读取扫描结果文件
         with open('data/shyd-saomiao.txt', 'r', encoding='utf-8') as f:
@@ -42,14 +57,17 @@ jobs:
                 parts = line.split(',', 1)
                 resolution = parts[0].strip()
                 url = parts[1].strip()
-                # 排除576分辨率
-                if '576' not in resolution:
+                # 排除576分辨率和黑名单中的链接
+                if '576' not in resolution and url not in blacklist_urls:
                     valid_urls.add(url)
             else:
                 # 如果没有逗号，当作纯链接处理
-                valid_urls.add(line)
+                if line not in blacklist_urls:
+                    valid_urls.add(line)
         
         print(f"有效链接数量: {len(valid_urls)}")
+        if blacklist_urls:
+            print(f"已过滤黑名单链接")
         
         # 读取现有的 M3U 文件
         try:
