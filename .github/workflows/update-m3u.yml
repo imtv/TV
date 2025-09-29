@@ -1,11 +1,10 @@
 name: Update M3U Playlist
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 允许手动触发
   push:
     paths:
       - 'data/shyd-saomiao.txt'
-    # branches: [ imtv ]
 
 jobs:
   update-m3u:
@@ -25,10 +24,16 @@ jobs:
     - name: Install dependencies
       run: pip install requests
 
+    - name: Debug - Check files
+      run: |
+        echo "Current directory: $(pwd)"
+        echo "Files in data directory:"
+        ls -la data/
+        echo "Content of scan file (first 5 lines):"
+        head -n 5 data/shyd-saomiao.txt
+
     - name: Update M3U file
       run: python .github/scripts/update_m3u.py
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Commit changes
       run: |
