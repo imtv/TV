@@ -56,6 +56,8 @@ http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001037/index.m3u8
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001028/index.m3u8
 #EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://live.fanmingming.com/tv/广东卫视.png" group-title="卫视频道",广东卫视4K
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001550/index.m3u8
+#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://live.fanmingming.com/tv/广东卫视.png" group-title="卫视频道",广东卫视
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001032/index.m3u8
 #EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" tvg-logo="https://live.fanmingming.com/tv/广西卫视.png" group-title="卫视频道",广西卫视
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001224/index.m3u8
 #EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" tvg-logo="https://live.fanmingming.com/tv/江苏卫视.png" group-title="卫视频道",江苏卫视
@@ -72,6 +74,8 @@ http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001023/index.m3u8
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001183/index.m3u8
 #EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" tvg-logo="https://live.fanmingming.com/tv/深圳卫视.png" group-title="卫视频道",深圳卫视4K
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001560/index.m3u8
+#EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" tvg-logo="https://live.fanmingming.com/tv/深圳卫视.png" group-title="卫视频道",深圳卫视
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001030/index.m3u8
 #EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" tvg-logo="https://live.fanmingming.com/tv/湖北卫视.png" group-title="卫视频道",湖北卫视
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001027/index.m3u8
 #EXTINF:-1 tvg-id="山西卫视" tvg-name="山西卫视" tvg-logo="https://live.fanmingming.com/tv/山西卫视.png" group-title="卫视频道",山西卫视
@@ -169,10 +173,9 @@ http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001039/index.m3u8
 #EXTINF:-1 tvg-id="央广购物" tvg-name="央广购物" tvg-logo="https://live.fanmingming.com/tv/央广购物.png" group-title="购物频道",央广购物
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001420/index.m3u8
 
+
 #EXTINF:-1,新频道 - 待补全
-http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001030/index.m3u8
-#EXTINF:-1,新频道 - 待补全
-http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001032/index.m3u8
+
 #EXTINF:-1,新频道 - 待补全
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001148/index.m3u8
 #EXTINF:-1,新频道 - 待补全
