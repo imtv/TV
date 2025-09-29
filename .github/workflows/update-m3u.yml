@@ -1,6 +1,7 @@
 name: Update M3U Playlist
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'data/shyd-saomiao.txt'
