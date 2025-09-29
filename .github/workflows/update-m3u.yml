@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'data/shyd-saomiao.txt'
-    branches: [ main ]
+    branches: [ imtv ]
 
 jobs:
   update-m3u:
