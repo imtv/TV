@@ -6,3 +6,15 @@ http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001378/index.m3u8
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001398/index.m3u8
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001520/index.m3u8
 
+#EXTINF:-1 tvg-id="Bestv赛事1" tvg-name="Bestv赛事1" tvg-logo="https://live.fanmingming.com/tv/bestv.png" group-title="赛事直播",Bestv赛事1
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001151/index.m3u8
+#EXTINF:-1 tvg-id="Bestv赛事2" tvg-name="Bestv赛事2" tvg-logo="https://live.fanmingming.com/tv/bestv.png" group-title="赛事直播",Bestv赛事2
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001359/index.m3u8
+#EXTINF:-1 tvg-id="Bestv赛事3" tvg-name="Bestv赛事3" tvg-logo="https://live.fanmingming.com/tv/bestv.png" group-title="赛事直播",Bestv赛事3
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001388/index.m3u8
+#EXTINF:-1 tvg-id="Bestv赛事4" tvg-name="Bestv赛事4" tvg-logo="https://live.fanmingming.com/tv/bestv.png" group-title="赛事直播",Bestv赛事4
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001149/index.m3u8
+#EXTINF:-1 tvg-id="Bestv赛事5" tvg-name="Bestv赛事5" tvg-logo="https://live.fanmingming.com/tv/bestv.png" group-title="赛事直播",Bestv赛事5
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001153/index.m3u8
+#EXTINF:-1 tvg-id="Bestv赛事6" tvg-name="Bestv赛事6" tvg-logo="https://live.fanmingming.com/tv/bestv.png" group-title="赛事直播",Bestv赛事6
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001154/index.m3u8
