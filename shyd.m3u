@@ -1,4 +1,3 @@
-
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://live.fanmingming.com/tv/CCTV1.png" group-title="央视频道",CCTV-1 综合
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001022/index.m3u8
 #EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://live.fanmingming.com/tv/CCTV2.png" group-title="央视频道",CCTV-2 财经
@@ -29,13 +28,13 @@ http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001328/index.m3u8
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001240/index.m3u8
 #EXTINF:-1 tvg-id="CCTV15" tvg-name="CCTV15" tvg-logo="https://live.fanmingming.com/tv/CCTV15.png" group-title="央视频道",CCTV-15 音乐
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001338/index.m3u8
-#EXTINF:-1 tvg-id="CCTV16" tvg-name="CCTV16" tvg-logo="https://live.fanmingming.com/tv/CCTV16.png" group-title="央视频道",CCTV-16 奥林匹克
-http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001248/index.m3u8
 #EXTINF:-1 tvg-id="CCTV16" tvg-name="CCTV16" tvg-logo="https://live.fanmingming.com/tv/CCTV16.png" group-title="央视频道",CCTV-16 奥林匹克4K
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001258/index.m3u8
+#EXTINF:-1 tvg-id="CCTV16" tvg-name="CCTV16" tvg-logo="https://live.fanmingming.com/tv/CCTV16.png" group-title="央视频道",CCTV-16 奥林匹克
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001248/index.m3u8
 #EXTINF:-1 tvg-id="CCTV17" tvg-name="CCTV17" tvg-logo="https://live.fanmingming.com/tv/CCTV17.png" group-title="央视频道",CCTV-17 农业农村
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001241/index.m3u8
-#EXTINF:-1 tvg-id="CCTV16" tvg-name="CCTV16" tvg-logo="https://live.fanmingming.com/tv/CCTV16.png" group-title="央视频道",CCTV-4K 超高清*
+#EXTINF:-1 tvg-id="CCTV4K" tvg-name="CCTV4K" tvg-logo="https://live.fanmingming.com/tv/CCTV4K.png" group-title="央视频道",CCTV-4K 超高清
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001451/index.m3u8
 #EXTINF:-1 tvg-id="东方卫视" tvg-name="东方卫视" tvg-logo="https://live.fanmingming.com/tv/东方卫视.png" group-title="卫视频道",东方卫视4K
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001641/index.m3u8
@@ -125,7 +124,7 @@ http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001065/index.m3u8
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001072/index.m3u8
 #EXTINF:-1 tvg-id="兵团卫视" tvg-name="兵团卫视" tvg-logo="https://live.fanmingming.com/tv/兵团卫视.png" group-title="卫视频道",兵团卫视
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001066/index.m3u8
-#EXTINF:-1 tvg-id="兵团卫视" tvg-name="兵团卫视" tvg-logo="https://live.fanmingming.com/tv/兵团卫视.png" group-title="卫视频道",内蒙古卫视*
+#EXTINF:-1 tvg-id="内蒙古卫视" tvg-name="内蒙古卫视" tvg-logo="https://live.fanmingming.com/tv/内蒙古卫视.png" group-title="卫视频道",内蒙古卫视
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001530/index.m3u8
 #EXTINF:-1 tvg-id="中国教育1台" tvg-name="中国教育1台" tvg-logo="https://live.fanmingming.com/tv/CETV1.png" group-title="卫视频道",CETV-1
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001020/index.m3u8
@@ -181,33 +180,33 @@ http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001040/index.m3u8
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001039/index.m3u8
 #EXTINF:-1 tvg-id="央广购物" tvg-name="央广购物" tvg-logo="https://live.fanmingming.com/tv/央广购物.png" group-title="购物频道",央广购物
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001420/index.m3u8
-#EXTINF:-1 ,CHC家庭影院
+#EXTINF:-1 tvg-id="CHC家庭影院" tvg-name="CHC家庭影院" tvg-logo="https://live.fanmingming.com/tv/CHC家庭影院.png" group-title="付费频道",CHC家庭影院
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001570/index.m3u8
-#EXTINF:-1 ,CHC动作电影
+#EXTINF:-1 tvg-id="CHC动作电影" tvg-name="CHC动作电影" tvg-logo="https://live.fanmingming.com/tv/CHC动作电影.png" group-title="付费频道",CHC动作电影
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001580/index.m3u8
-#EXTINF:-1 ,CHC影迷电影
+#EXTINF:-1 tvg-id="CHC影迷电影" tvg-name="CHC影迷电影" tvg-logo="https://live.fanmingming.com/tv/CHC影迷电影.png" group-title="付费频道",CHC影迷电影
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001581/index.m3u8
-#EXTINF:-1 ,CCTV女性时尚
+#EXTINF:-1 tvg-id="CCTV女性时尚" tvg-name="CCTV女性时尚" tvg-logo="https://live.fanmingming.com/tv/女性时尚.png" group-title="付费频道",CCTV女性时尚
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001571/index.m3u8
-#EXTINF:-1 ,CCTV风云足球
+#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" tvg-logo="https://live.fanmingming.com/tv/风云足球.png" group-title="付费频道",CCTV风云足球
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001590/index.m3u8
-#EXTINF:-1 ,CCTV央视台球
+#EXTINF:-1 tvg-id="CCTV央视台球" tvg-name="CCTV央视台球" tvg-logo="https://live.fanmingming.com/tv/央视台球.png" group-title="付费频道",CCTV央视台球
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001600/index.m3u8
-#EXTINF:-1 ,CCTV兵器科技
+#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" tvg-logo="https://live.fanmingming.com/tv/兵器科技.png" group-title="付费频道",CCTV兵器科技
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001610/index.m3u8
-#EXTINF:-1 ,CCTV世界地理
+#EXTINF:-1 tvg-id="CCTV世界地理" tvg-name="CCTV世界地理" tvg-logo="https://live.fanmingming.com/tv/世界地理.png" group-title="付费频道",CCTV世界地理
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001620/index.m3u8
-#EXTINF:-1 ,CCTV第一剧场
+#EXTINF:-1 tvg-id="CCTV第一剧场" tvg-name="CCTV第一剧场" tvg-logo="https://live.fanmingming.com/tv/第一剧场.png" group-title="付费频道",CCTV第一剧场
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001621/index.m3u8
-#EXTINF:-1 ,CCTV高尔夫·网球
+#EXTINF:-1 tvg-id="CCTV高尔夫网球" tvg-name="CCTV高尔夫网球" tvg-logo="https://live.fanmingming.com/tv/高尔夫网球.png" group-title="付费频道",CCTV高尔夫·网球
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001630/index.m3u8
-#EXTINF:-1 ,CCTV怀旧剧场
+#EXTINF:-1 tvg-id="CCTV怀旧剧场" tvg-name="CCTV怀旧剧场" tvg-logo="https://live.fanmingming.com/tv/怀旧剧场.png" group-title="付费频道",CCTV怀旧剧场
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001640/index.m3u8
-#EXTINF:-1 ,CCTV风云剧场
+#EXTINF:-1 tvg-id="CCTV风云剧场" tvg-name="CCTV风云剧场" tvg-logo="https://live.fanmingming.com/tv/风云剧场.png" group-title="付费频道",CCTV风云剧场
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001650/index.m3u8
-#EXTINF:-1 ,CCTV风云音乐
+#EXTINF:-1 tvg-id="CCTV风云音乐" tvg-name="CCTV风云音乐" tvg-logo="https://live.fanmingming.com/tv/风云音乐.png" group-title="付费频道",CCTV风云音乐
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001660/index.m3u8
-#EXTINF:-1 ,CCTV央视文化精品
+#EXTINF:-1 tvg-id="CCTV文化精品" tvg-name="CCTV文化精品" tvg-logo="https://live.fanmingming.com/tv/文化精品.png" group-title="付费频道",CCTV央视文化精品
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001670/index.m3u8
-#EXTINF:-1 ,CETV早期教育
+#EXTINF:-1 tvg-id="CETV早期教育" tvg-name="CETV早期教育" tvg-logo="https://live.fanmingming.com/tv/早期教育.png" group-title="付费频道",CETV早期教育
 http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001680/index.m3u8
