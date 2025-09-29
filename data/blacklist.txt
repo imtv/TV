@@ -1,0 +1,7 @@
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001148/index.m3u8
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001150/index.m3u8
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001152/index.m3u8
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001162/index.m3u8
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001378/index.m3u8
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001398/index.m3u8
+http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001520/index.m3u8
