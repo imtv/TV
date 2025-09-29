@@ -1,33 +1,151 @@
-name: Sync shyd.m3u from shyd-saomiao.txt
+name: Sync M3U from Scan Results
 
 on:
-  workflow_dispatch: 
   push:
     paths:
       - 'data/shyd-saomiao.txt'
+  workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Run sync script
-        run: python scripts/sync_m3u.py
-
-      - name: Commit and push if changed
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add shyd.m3u
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: auto-sync shyd.m3u from shyd-saomiao.txt"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Update M3U file
+      run: |
+        python3 << 'EOF'
+        import re
+        from collections import OrderedDict
+        
+        # 读取扫描结果文件
+        with open('data/shyd-saomiao.txt', 'r', encoding='utf-8') as f:
+            scan_lines = f.readlines()
+        
+        # 解析扫描结果，提取非576分辨率的链接
+        valid_urls = set()
+        for line in scan_lines:
+            line = line.strip()
+            if not line:
+                continue
+            # 匹配格式：分辨率,链接 或 直接是链接
+            if ',' in line:
+                parts = line.split(',', 1)
+                resolution = parts[0].strip()
+                url = parts[1].strip()
+                # 排除576分辨率
+                if '576' not in resolution:
+                    valid_urls.add(url)
+            else:
+                # 如果没有逗号，当作纯链接处理
+                valid_urls.add(line)
+        
+        print(f"有效链接数量: {len(valid_urls)}")
+        
+        # 读取现有的 M3U 文件
+        try:
+            with open('shyd.m3u', 'r', encoding='utf-8') as f:
+                m3u_content = f.read()
+        except FileNotFoundError:
+            print("M3U 文件不存在，将创建新文件")
+            m3u_content = "#EXTM3U\n"
+        
+        # 解析 M3U 文件
+        lines = m3u_content.split('\n')
+        
+        # 保存文件头和其他非频道内容
+        header = []
+        entries = []  # [(extinf_line, url)]
+        
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            
+            if line.startswith('#EXTM3U'):
+                header.append(lines[i])
+                i += 1
+            elif line.startswith('#EXTINF'):
+                # 这是一个频道条目
+                extinf_line = lines[i]
+                url_line = ''
+                if i + 1 < len(lines):
+                    url_line = lines[i + 1].strip()
+                entries.append((extinf_line, url_line))
+                i += 2
+            elif line.startswith('#') and not line.startswith('#EXTINF'):
+                # 其他注释行，保留在header中
+                header.append(lines[i])
+                i += 1
+            elif not line:
+                # 空行
+                i += 1
+            else:
+                # 可能是没有 EXTINF 的独立链接（异常情况）
+                i += 1
+        
+        # 筛选保留的条目（链接在 valid_urls 中的）
+        kept_entries = []
+        kept_urls = set()
+        for extinf, url in entries:
+            if url in valid_urls:
+                kept_entries.append((extinf, url))
+                kept_urls.add(url)
+        
+        print(f"保留的现有频道数量: {len(kept_entries)}")
+        
+        # 找出新增的链接
+        new_urls = valid_urls - kept_urls
+        print(f"新增的频道数量: {len(new_urls)}")
+        
+        # 为新增链接创建基本的 EXTINF 条目
+        new_entries = []
+        for url in sorted(new_urls):
+            # 创建基本的 EXTINF，用户稍后可以手动补全
+            extinf = f'#EXTINF:-1,新频道 - 待补全'
+            new_entries.append((extinf, url))
+        
+        # 重新组合文件
+        new_content = '\n'.join(header) + '\n'
+        if not new_content.endswith('\n') and header:
+            new_content += '\n'
+        
+        # 添加保留的条目
+        for extinf, url in kept_entries:
+            new_content += f'{extinf}\n{url}\n'
+        
+        # 添加新增的条目到最后
+        if new_entries:
+            new_content += '\n'
+            for extinf, url in new_entries:
+                new_content += f'{extinf}\n{url}\n'
+        
+        # 写回文件
+        with open('shyd.m3u', 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        
+        print("M3U 文件更新完成")
+        print(f"删除的频道数: {len(entries) - len(kept_entries)}")
+        EOF
+    
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        git add shyd.m3u
+        
+        if git diff --staged --quiet; then
+          echo "没有变化，无需提交"
+        else
+          git commit -m "Auto update shyd.m3u from scan results"
+          git push
+        fi
