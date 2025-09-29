@@ -1,0 +1,16 @@
+name: Test Workflow
+
+on:
+  workflow_dispatch:  # 允许手动触发
+  push:
+    paths:
+      - 'data/shyd-saomiao.txt'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Run a simple command
+      run: echo "Hello, World! The workflow is working."
