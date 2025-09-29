@@ -188,5 +188,3 @@
 700[3840x2160],http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001700/index.m3u8
 710[3840x2160],http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001710/index.m3u8
 720[3840x2160],http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001720/index.m3u8
-
-这是我扫描出来的IPTV播放链接，前面还有分辨率，请帮我把分辨率576的节目都删了，剩余的节目只保留http的链接
