@@ -1,4 +1,3 @@
-5[1023x576],http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001005/index.m3u8
 1[1023x576],http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001001/index.m3u8
 6[1023x576],http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001006/index.m3u8
 8[1023x576],http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001008/index.m3u8
