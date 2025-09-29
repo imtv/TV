@@ -1,0 +1,33 @@
+name: Sync shyd.m3u from shyd-saomiao.txt
+
+on:
+  workflow_dispatch: 
+  push:
+    paths:
+      - 'data/shyd-saomiao.txt'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run sync script
+        run: python scripts/sync_m3u.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add shyd.m3u
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: auto-sync shyd.m3u from shyd-saomiao.txt"
+            git push
+          else
+            echo "No changes to commit"
+          fi
