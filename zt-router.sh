@@ -19,6 +19,13 @@ if [ "$MODE" = "1" ]; then
     fi
 
     echo
+    echo "== 检查队列规则与拥塞控制（fq / bbr）=="
+    QDISC=$(sysctl -n net.core.default_qdisc 2>/dev/null || echo "未知")
+    CCALG=$(sysctl -n net.ipv4.tcp_congestion_control 2>/dev/null || echo "未知")
+    echo "当前 net.core.default_qdisc           = $QDISC"
+    echo "当前 net.ipv4.tcp_congestion_control = $CCALG"
+
+    echo
     echo "== 检查 iptables NAT 规则（POSTROUTING）=="
     iptables -t nat -L POSTROUTING -n -v || echo "获取 nat 表失败。"
 
