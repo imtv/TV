@@ -81,15 +81,24 @@ if [[ "$CONFIRM" != "y" && "$CONFIRM" != "Y" ]]; then
 fi
 
 echo
-echo "== 1. 开启并持久化 IPv4 转发 =="
+echo "== 1. 开启并持久化 IPv4 转发 + BBR =="
 
 cat >/etc/sysctl.d/99-ipforward.conf << 'EOF'
 net.ipv4.ip_forward=1
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
 EOF
 
 sysctl --system >/dev/null
+
 IPFWD=$(cat /proc/sys/net/ipv4/ip_forward)
-echo "当前 net.ipv4.ip_forward = $IPFWD"
+QDISC=$(sysctl -n net.core.default_qdisc 2>/dev/null || echo "未知")
+CCALG=$(sysctl -n net.ipv4.tcp_congestion_control 2>/dev/null || echo "未知")
+
+echo "当前 net.ipv4.ip_forward         = $IPFWD"
+echo "当前 net.core.default_qdisc      = $QDISC"
+echo "当前 net.ipv4.tcp_congestion_control = $CCALG"
+
 if [ "$IPFWD" != "1" ]; then
     echo "警告：ip_forward 未成功置为 1，请手动检查 /etc/sysctl.d/99-ipforward.conf。"
 fi
@@ -135,7 +144,8 @@ iptables -L FORWARD -n -v
 
 echo
 echo "配置完成："
-echo "- 已开启并持久化 IPv4 转发"
+echo "- 已开启并持久化 IPv4 转发（ip_forward=1）"
+echo "- 已设置默认队列规则为 fq，拥塞控制为 bbr（实际值见上方输出）"
 echo "- 已为物理网卡 $PHY_IFACE 和 ZeroTier 网卡: ${ZT_IFACES[*]} 配置 NAT + 转发"
 echo "- 规则已通过 netfilter-persistent 持久化"
 echo
