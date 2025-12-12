@@ -4,10 +4,13 @@
 set -e
 
 echo "=== ZeroTier 内网路由脚本 ==="
-echo "1) 只检查当前配置（ip_forward 与 iptables）"
-echo "2) 执行完整配置（交互式设置并保存）"
+echo "1) 只检查当前配置（ip_forward / fq-bbr / iptables）"
+echo "2) 执行完整配置（安装依赖 + 交互式设置并保存）"
 read -rp "请选择模式 [1/2]: " MODE
 
+#######################################
+# 模式 1：仅检查当前状态
+#######################################
 if [ "$MODE" = "1" ]; then
     echo
     echo "== 检查 net.ipv4.ip_forward 状态 =="
@@ -27,11 +30,19 @@ if [ "$MODE" = "1" ]; then
 
     echo
     echo "== 检查 iptables NAT 规则（POSTROUTING）=="
-    iptables -t nat -L POSTROUTING -n -v || echo "获取 nat 表失败。"
+    if command -v iptables >/dev/null 2>&1; then
+        iptables -t nat -L POSTROUTING -n -v || echo "获取 nat 表失败。"
+    else
+        echo "系统中未找到 iptables 命令，无法检查 NAT 规则。"
+    fi
 
     echo
     echo "== 检查 iptables FORWARD 规则 =="
-    iptables -L FORWARD -n -v || echo "获取 FORWARD 链失败。"
+    if command -v iptables >/dev/null 2>&1; then
+        iptables -L FORWARD -n -v || echo "获取 FORWARD 链失败。"
+    else
+        echo "系统中未找到 iptables 命令，无法检查 FORWARD 规则。"
+    fi
 
     echo
     echo "检查完成，仅查看未修改任何配置。"
@@ -43,8 +54,23 @@ if [ "$MODE" != "2" ]; then
     exit 1
 fi
 
+#######################################
+# 模式 2：安装依赖 + 配置
+#######################################
 echo
-echo "=== 进入配置模式 ==="
+echo "=== 进入配置模式：先安装 iptables 与持久化工具 ==="
+
+# 安装 iptables 与持久化工具
+if ! command -v iptables >/dev/null 2>&1 || ! command -v netfilter-persistent >/dev/null 2>&1; then
+    echo "正在安装 iptables、iptables-persistent、netfilter-persistent ..."
+    apt update
+    DEBIAN_FRONTEND=noninteractive apt install -y iptables iptables-persistent netfilter-persistent
+else
+    echo "已检测到 iptables 和 netfilter-persistent，无需安装。"
+fi
+
+echo
+echo "=== 配置 ZeroTier ↔ 内网路由 ==="
 
 # 1. 询问物理内网网卡名称（连接你内网网段的那块，比如 ens33）
 read -rp "请输入连接内网（你的局域网网段）的物理网卡名（例如 ens33）: " PHY_IFACE
@@ -131,12 +157,6 @@ done
 echo
 echo "== 3. 保存规则（netfilter-persistent）=="
 
-if ! command -v netfilter-persistent >/dev/null 2>&1; then
-    echo "未检测到 netfilter-persistent，正在安装 iptables-persistent 和 netfilter-persistent ..."
-    apt update
-    DEBIAN_FRONTEND=noninteractive apt install -y iptables-persistent netfilter-persistent
-fi
-
 netfilter-persistent save
 
 echo
@@ -151,8 +171,8 @@ iptables -L FORWARD -n -v
 
 echo
 echo "配置完成："
-echo "- 已开启并持久化 IPv4 转发（ip_forward=1）"
-echo "- 已设置默认队列规则为 fq，拥塞控制为 bbr（实际值见上方输出）"
+echo "- 已安装并准备好 iptables / iptables-persistent / netfilter-persistent"
+echo "- 已开启并持久化 IPv4 转发（ip_forward=1），启用 fq + bbr（以实际输出为准）"
 echo "- 已为物理网卡 $PHY_IFACE 和 ZeroTier 网卡: ${ZT_IFACES[*]} 配置 NAT + 转发"
 echo "- 规则已通过 netfilter-persistent 持久化"
 echo
